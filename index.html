@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header>
+    <div class="left-logo-text">
+        <h1>FastRead</h1>
+    </div>
+
+    <a href="#" id="optionsButton">
+        <img src="/img/setting(1).png" alt="">
+    </a>
+</header>
+<div class="wrapper">
+    <div class="read-area">
+        <p id="textShow">You can start with our text or <b>Upload your own in settings menu</b></p>
+    </div>
+</div>
+
+<footer>
+    <div class="button-area">
+
+        <button id="moveBack" class="skip-btn"><img src="img/fast-backward.png" alt=""></button>
+
+        <div class="wrapp-start-stop">
+            <button id="stopRead" class="start-stop-btn hide"><img src="img/pause.png" alt=""></button>
+            <button id="startRead" class="start-stop-btn"><img src="img/-.png" alt=""></button>
+        </div>
+        <button id="moveForward" class="skip-btn"><img src="img/fast-forward.png" alt=""></button>
+
+
+    </div>
+
+
+</footer>
+
+
+<div class="popup">
+
+    <h2>Settings</h2>
+    <button id="resetRead">RESET</button>
+    <div class="read-speed">
+        <p title="time of reading one word">set speed of reading </p>
+        <input type="number" step="0.01" id="readSpeed" value="0.7">
+
+    </div>
+
+    <div class="pastText">
+        <p>past your text here</p>
+        <textarea name="text" cols="30" rows="5" id="usertext"></textarea>
+        <button id="uploadText">Upload</button>
+    </div>
+    <p>or</p>
+    <div class="uploadText">
+        <input id="file-selector" type="file" accept=".txt, .fb2">
+    </div>
+
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
