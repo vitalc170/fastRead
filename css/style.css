@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Philosopher:ital,wght@1,700&display=swap');
+
 @font-face {
     font-family: 'Verdana';
     src: url('fonts/Verdana.ttf');
@@ -9,7 +11,47 @@
 }
 
 
+::-webkit-scrollbar {
+    width: 2px;
+    height: 1px;
+}
 
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff5;
+    border: 0px none #ffffff;
+    border-radius: 11px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #7d7d7d;
+}
+
+::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
 
 * {
     margin: 0;
@@ -28,6 +70,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     background: #100f11;
+    font-family: Lora;
 }
 
 .wrapper {
@@ -43,7 +86,7 @@ h1 {
     font-size: 30px;
 }
 
-h2{
+h2 {
     font-size: 24px;
     text-align: center;
     font-family: 'Philosopher'
@@ -97,6 +140,7 @@ header.hide {
 }
 
 footer {
+    position: relative;
     padding: 40px 18px;
     border: 1px solid rgba(255, 255, 255, 0.07);
 }
@@ -106,13 +150,14 @@ footer {
     display: flex;
     justify-content: space-evenly;
 }
+
 button img {
     width: 85%;
     height: 85%;
     margin: auto;
 }
 
-.button-area button{
+.button-area button {
     background: transparent;
     border: 0;
     cursor: pointer;
@@ -120,17 +165,18 @@ button img {
     height: 54px;
     display: flex;
 }
-.button-area .start-stop-btn{
+
+.button-area .start-stop-btn {
     border-radius: 25px;
     background: #fff1;
     padding: 10% 5% 10% 15%;
 }
 
-#stopRead{
+#stopRead {
     padding: 10%;
 }
 
-.skip-btn{
+.skip-btn {
     padding: 0.4%;
 }
 
@@ -143,16 +189,122 @@ button img {
     display: none;
 }
 
-.popup.show {
+.text-list {
+    display: none;
+}
+
+.popup.show, .text-list.show {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     position: fixed;
-    width: 90vw;
-    left: 4vw;
-    height: 80vh;
-    top: 7vh;
+    width: 40vw;
+    right: 0;
+    height: 100vh;
+    top: 0;
     background: rgb(40, 20, 20);
     padding: 20px;
     color: #fff;
+    overflow: scroll;
+    z-index: 11111;
+    /*padding-bottom: 20px;*/
+}
+
+.text-list .wrap-text-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.wrap-text-list a {
+    text-decoration: none;
+    color: #fff9;
+
+}
+
+.wrap-text-list p.active, .wrap-text-list a {
+    padding: 5px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid #fff1;
+    cursor: pointer;
+}
+
+.wrap-text-list p.active {
+    background: #fff5;
+}
+
+.progressdot-wrapper {
+    position: absolute;
+    width: 98%;
+    height: 2px;
+    top: -2px;
+    left: 1%;
+}
+
+.progressdot-wrapper .fill {
+    background: #fff;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+}
+
+.slider {
+    width: 100%;
+    left: 0%;
+    height: 2px;
+    top: 0;
+    position: absolute;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: #ddd8;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 25px;
+    background: #fff;
+}
+
+
+/*ff*/
+
+
+input[type=range]::-moz-range-track {
+    height: 2px;
+    background: #ddd8;
+    border: none;
+    border-radius: 25px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 25px;
+    background: #fff;
+}
+
+.close-btn {
+    text-align: end;
+}
+
+.text-area {
+    position: absolute;
+    right: 7%;
+    top: 45%;
+}
+
+#textList img {
+    width: 30px;
+    height: 30px;
 }
