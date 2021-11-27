@@ -308,3 +308,11 @@ input[type=range]::-moz-range-thumb {
     width: 30px;
     height: 30px;
 }
+
+@media (max-width: 768px) {
+    .popup.show, .text-list.show {
+
+        width: 90vw;
+        /*padding-bottom: 20px;*/
+    }
+}
