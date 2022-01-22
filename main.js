@@ -1,3 +1,4 @@
+document.body.requestFullScreen();
 const textArea = document.querySelector('#textShow');
 
 const buttonStart = document.querySelector('#startRead');
